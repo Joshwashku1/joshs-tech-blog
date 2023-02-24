@@ -13,13 +13,40 @@
   <link rel="stylesheet" href="/css/style.css">
   <title>Josh's Tech Blog</title>
 </head>
-<body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary text-bg-dark p-3">
-        <div class="container-fluid">
-            
-        </div>
 
-    </nav>
+<body>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary text-bg-dark p-3">
+      <div class="container-fluid">
+          <a class="navbar-brand text-light" href="/">Josh's Tech Blog</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link active text-light" aria-current="page" href="/login">Login</a>
+              {{#if logged_in}}
+              <a class="nav-link abled text-light" href="/blogs">Dashboard</a>
+              {{else}}
+               <a class="nav-link disabled text-light" href="/blogs">Dashboard</a>
+
+              {{/if}}
+              
+              {{#if logged_in}}
+              <a class="nav-link text-light" id="logoutbtn" role="button">Logout</a>
+              {{/if}}
+              
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </nav>
+
+  <main class="container container-fluid mt-5">
+    {{{ body }}}
+  </main>
 
   <script src="/js/login.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
