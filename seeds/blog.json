@@ -1,0 +1,7 @@
+[
+    {
+        "blog_title": "Seeding",
+        "blog_body": "This is a blog about seeding in sequelize",
+        "user_id": 1
+    }
+]
