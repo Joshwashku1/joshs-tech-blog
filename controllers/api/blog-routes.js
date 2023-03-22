@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { Blog } = require('../../models');
 
+// find all blogs in database
 router.get('/', async (req, res) => {
     try{
         const allBlogs = await Blog.findAll();
@@ -10,6 +11,7 @@ router.get('/', async (req, res) => {
     }
 });
 
+// create a blog and store the user id as session id
 router.post('/', async (req,res) => {
     try{
         const newBlog = await Blog.create({
@@ -22,6 +24,7 @@ router.post('/', async (req,res) => {
     }
 })
 
+// delete a blog based off its id
 router.delete('/:id', async (req,res) => {
     try{
         const blogDeleted = await Blog.destroy({where: {id: req.params.id}});

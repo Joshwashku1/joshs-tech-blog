@@ -17,7 +17,7 @@ const loginFormHandler = async (event) => {
 
         if (response.ok) {
             // If successful, redirect the browser to the profile page
-            document.location.replace('/profile');
+            document.location.replace('/');
         } else {
             let password2 = document.querySelector('#loginpassword')
             password2.classList = "form-control is-invalid";
@@ -41,7 +41,7 @@ const signupFormHandler = async (event) => {
         });
 
         if (response.ok) {
-            document.location.replace('/profile');
+            document.location.replace('/');
         } else {
             let password3 = document.querySelector('#sighpassword')
             password3.classList = "form-control is-invalid";
@@ -50,24 +50,7 @@ const signupFormHandler = async (event) => {
     }
 };
 
-const logout = async () => {
-    const response = await fetch('/api/users/logout', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-    });
 
-    if (response.ok) {
-        document.location.replace('/');
-    } else {
-        alert(response.statusText);
-    }
-};
-
-
-
-//   document
-//     .getElementById('login')
-//     .addEventListener('submit', loginFormHandler);
 
 const login = document.getElementById('loginbtn')
 if (login) {
@@ -81,7 +64,4 @@ if (signup) {
 
 }
 
-const logoutbutton = document.querySelector('#logoutbtn')
-if (logoutbutton) {
-    logoutbutton.addEventListener('click', logout);
-}
+
