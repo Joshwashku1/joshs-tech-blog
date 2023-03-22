@@ -4,5 +4,10 @@
         <header>{{blog_title}}</header>
         <article>{{blog_body}}</article>
     </section>
+    <div class="col-md-4">
+        <button class="btn btn-sm btn-danger" data-id="{{blog.id}}">DELETE</button> 
+    </div>
     {{/each}}
 </section>
+
+<script src="/js/blog.js"></script>
