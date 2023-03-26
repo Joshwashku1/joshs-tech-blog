@@ -10,9 +10,21 @@ router.get('/', async (req, res) => {
 
         const blogs = dbBlogData.map((blog) => blog.get({plain: true}));
 
-
         res.render('homepage', {
-            blogs
+            blogs,
+            // Pass the logged session to the template
+            logged_in: req.session.logged_in,
+        });
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
+// Dashboard route to add blogs
+router.get('/dashboard', async (req, res) => {
+    try{
+        res.render('dashboard', {
+            logged_in: req.session.logged_in,
         });
     } catch (err) {
         res.status(500).json(err);
